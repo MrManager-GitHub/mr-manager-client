@@ -1,0 +1,62 @@
+.main {
+    margin: 0;
+    height: 100vh;
+}
+
+.picturecontainer {
+    background-image: url("./../../elements/Images/Big bang.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: url("./../../elements/Images/Web 2.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%; */
+    /* background-image: url("./../../elements/Images/Opera1.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position-x: -98%; */
+}
+
+.logincontainer {
+    /* background-color: #1b2735; */
+    background-color: #f7f7f7;
+    /* box-shadow: -5px 3px 15px rgba(0, 0, 0); */
+}
+
+.inputcontainer {
+    padding: 10px;
+    width: 60%;
+}
+
+.buttoncontainer {
+    width: 60%;
+}
+
+.contentcontainer1 {
+    padding: 1rem;
+}
+
+.contentcontainer2 {
+    padding: 0.1rem;
+}
+
+@media only screen and (max-width: 1111px) {
+    .picturecontainer {
+        background-size: auto 100%;
+        background-position-x: -100px;
+        background-position-y: 25px;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    .picturecontainer {
+        background-size: auto 100%;
+        background-position-x: -200px;
+        background-position-y: 25px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .picturecontainer {
+        display: none;
+    }
+}

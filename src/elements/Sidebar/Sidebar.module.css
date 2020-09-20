@@ -1,0 +1,42 @@
+.sidebarcontainer {
+    width: 100%;
+    height: 100%;
+    background-color: #1B2735;
+}
+
+.logocontainer {
+    width: 100%;
+    background-color: rgba(61, 74, 116, 0.25);
+    /* background-color: rgba(211, 211, 211, 0.25); */
+}
+
+.linkcontainer {
+    padding-top: 5rem;
+}
+
+ul li {
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    transition: color ease-in-out 0.3s;
+}
+
+ul li:hover {
+    background-color: rgba(211, 211, 211, 0.25);
+    border-radius: 10px;
+    color: #59BF6E;
+}
+
+ul li i {
+    font-size: inherit;
+}
+
+.iconcontainer {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
