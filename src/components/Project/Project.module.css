@@ -1,0 +1,28 @@
+.maincontainer {
+    width: 100%;
+    height: 93%;
+    padding: 2.5rem;
+}
+
+.addicon {
+    /* color: #45489a; */
+    color: #1B2735;
+    background-color: #fff;
+    /* background-color: #1B2735; */
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 1px 1px 5px rgb(56, 55, 55);
+    cursor: pointer;
+}
+
+.closeicon {
+    /* color: #45489a; */
+    color: #1B2735;
+    background-color: #fff;
+    /* background-color: #1B2735; */
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 1px 1px 5px rgb(56, 55, 55);
+    cursor: pointer;
+    transform: rotate(45deg);
+}

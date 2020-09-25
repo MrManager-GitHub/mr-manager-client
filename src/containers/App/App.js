@@ -30,10 +30,15 @@ function App() {
 				// contrastText: '#fff',
 			},
 			primary: {
-				light: '#30326b',
-				main: '#5850EC',
-				dark: '#6a6cae',
-				contrastText: '#000',
+				// light: '#30326b',
+				// main: '#5850EC',
+				// dark: '#6a6cae',
+				// contrastText: '#000',
+				light: '#7acb8b',
+				main: "#1B2735",
+				dark: '#3e854d',
+				contrastText: '#fff',
+				
 			},
 	
 			text: {

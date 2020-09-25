@@ -3,8 +3,7 @@ import { Grid,Button,Link,Typography,Paper,Box } from '@material-ui/core'
 
 import styles from './Login.module.css'
 import MyButton from './../../elements/Button/Button'
-import EmailInput from './../../elements/Input/EmailInput'
-import PasswordInput from './../../elements/Input/PasswordInput'
+import MyInputField from './../../elements/Input/MyInputField'
 import Logo from './../../elements/Logo/logo'
 
 class Login extends Component {
@@ -27,10 +26,10 @@ class Login extends Component {
 						</Grid>
 						<br/>
 						<Grid item className={styles.inputcontainer}>
-							<EmailInput />
+							<MyInputField type="email" label="Email" name="email" />
 						</Grid>
 						<Grid item className={styles.inputcontainer}>
-							<PasswordInput />
+							<MyInputField type="password" label="Password" name="password"/>
 						</Grid>
 						<br/>
 						<Grid item className={styles.buttoncontainer}>

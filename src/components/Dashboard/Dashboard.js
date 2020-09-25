@@ -3,6 +3,7 @@ import {Grid} from '@material-ui/core'
 import Navbar from './../../elements/Navbar/Navbar'
 import Sidebar from './../../elements/Sidebar/Sidebar'
 import styles from './Dashboard.module.css'
+import Project from './../Project/Project'
 class Dashboard extends Component {
     render() {
         return (
@@ -12,6 +13,7 @@ class Dashboard extends Component {
                 </Grid>
                 <Grid item container lg={10} mid={9} sm={8} xs={0}>
                     <Navbar />
+                    <Project />
                 </Grid>
             </Grid>
         )

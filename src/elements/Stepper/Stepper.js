@@ -5,11 +5,6 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import FirstNameInput from './../../elements/Input/FirstNameInput'
-import LastNameInput from './../../elements/Input/LastNameInput'
-import PhoneNumberInput from './../../elements/Input/PhoneNumberInput'
-import EmailInput from './../../elements/Input/EmailInput'
-import PasswordInput from './../../elements/Input/PasswordInput'
 import Logo from './../../elements/Logo/logo'
 import MyButton from './../../elements/Button/Button'
 
@@ -34,15 +29,15 @@ function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
         return (
-            <FirstNameInput />
+          <h1>1</h1>
         );
     case 1:
         return (
-            <FirstNameInput />
+          <h1>2</h1>
         );
     case 2:
         return (
-            <FirstNameInput />
+          <h1>3</h1>
         );
     default:
       return 'Something went wrong!!!';

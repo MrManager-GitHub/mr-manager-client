@@ -2,15 +2,10 @@ import React, { Component } from 'react'
 import { Grid, Button, Link,Typography} from '@material-ui/core'
 import styles from './Register.module.css'
 
-import FirstNameInput from './../../elements/Input/FirstNameInput'
-import LastNameInput from './../../elements/Input/LastNameInput'
-import PhoneNumberInput from './../../elements/Input/PhoneNumberInput'
-import EmailInput from './../../elements/Input/EmailInput'
-import PasswordInput from './../../elements/Input/PasswordInput'
+import MyInputField from './../../elements/Input/MyInputField'
 import Logo from './../../elements/Logo/logo'
 import MyButton from './../../elements/Button/Button'
 import Stepper from './../../elements/Stepper/Stepper'
-import CompanyNameInput from './../../elements/Input/CompanyNameInput'
 
 class Register extends Component {
     render() {
@@ -21,35 +16,36 @@ class Register extends Component {
                         <Grid item xs={12} container direction="row" className={styles.formcontainer}>
                             <Grid item xs={12}><Typography variant="h4" align="center" color="primary">Signup</Typography></Grid>
                             <Grid item xs={4}>
-                                <FirstNameInput />
+                                <MyInputField type="text" label="First name" name="fname"/>
                             </Grid>
                             <Grid item xs={2} />
                             <Grid item xs={4}>
-                                <LastNameInput />
+                                <MyInputField type="text" label="Last name" name="lname"/>
                             </Grid>
                             <Grid item xs={2} />
 
                             <Grid item xs={4}>
-                                <PhoneNumberInput />
+                                {/* <PhoneNumberInput /> */}
+                                <MyInputField type="number" label="Phone" name="phone"/>
                             </Grid>
                             <Grid item xs={2} />
                             <Grid item xs={4}>
-                                <EmailInput />
+                                <MyInputField type="email" label="Email" name="email"/>
                             </Grid>
                             <Grid item xs={2} />
 
                             <Grid item xs={5}>
-                                <CompanyNameInput />
+                                <MyInputField type="text" label="Company name" name="companyName"/>
                             </Grid>
                             <Grid item xs={7} />
 
                             <Grid item xs={5}>
-                                <PasswordInput />
+                                <MyInputField type="password" label="Password" name="password"/>
                             </Grid>
                             <Grid item xs={7} />
 
                             <Grid item xs={6}>
-                                <PasswordInput />
+                                <MyInputField type="password" label="Password" name="password"/>
                             </Grid>
                             <Grid item xs={6} />
                             {/* <Grid  item xs={3} />

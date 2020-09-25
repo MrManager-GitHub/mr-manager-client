@@ -1,9 +1,12 @@
 .circleScaleBtn {
     padding: 12px 24px;
     background-color: hsl(222, 100%, 95%);
-    color: hsl(243, 80%, 62%);
+    /* background-color: #1B2735; */
+    /* color: #fff; */
+    color: #1B2735;
+    border: 1px solid #1B2735;
     position: relative;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     overflow: hidden;
     z-index: 1;
     display: grid;
@@ -26,12 +29,14 @@
     border-radius: 50%;
     transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
     transition: opacity .4s cubic-bezier(.19, 1, .22, 1), transform .75s cubic-bezier(.19, 1, .22, 1);
-    background-color: hsl(243, 80%, 62%);
+    background-color: #1B2735;
     opacity: 0;
 }
 
 .circleScaleBtn:hover span {
-    color: hsl(222, 100%, 95%);
+    /* color: hsl(222, 100%, 95%); */
+    /* color: #59BF6E; */
+    color: #fff;
     cursor: pointer;
 }
 

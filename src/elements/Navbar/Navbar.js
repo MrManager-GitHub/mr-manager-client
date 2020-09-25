@@ -25,7 +25,8 @@ class Navbar extends Component {
     render() {
         return (
             <nav className={styles.nav}>
-                <Grid container direction="row" justify="flex-end" alignItems="center" className={styles.navcontainer}>
+                <Grid container direction="row" alignItems="center" className={styles.navcontainer}>
+                    <Grid item lg={11} />
                     <Grid item lg={1}>
                         <AccountMenu />
                     </Grid>
