@@ -1,0 +1,16 @@
+.sidebarContainer {
+    height: 100vh;
+}
+
+.rightsideContainer {
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+.navbarContainer {
+    height: 7%;
+}
+
+.pageContainer {
+    padding: 2rem;
+}

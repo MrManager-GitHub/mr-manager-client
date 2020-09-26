@@ -1,55 +1,40 @@
 import React,{useState} from 'react';
+import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { ThemeProvider, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import { Paper } from '@material-ui/core';
+import { ThemeProvider,createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 import Login from './../../components/Login/Login'
 import Register from './../../components/Register/Register'
+import Navbar from './../../elements/Navbar/Navbar'
+import Sidebar from './../../elements/Sidebar/Sidebar'
 import Dashboard from './../../components/Dashboard/Dashboard'
-import './../../Theme/Theme.js'
+import Project from './../../components/Project/Project'
+import Analysis from './../../components/Analysis/Analysis'
+import Supplier from './../../components/Supplier/Supplier'
+import PurchaseOrder from './../../components/PurchaseOrder/PurchaseOrder'
+import GlobalStore from './../../components/GlobalStore/GLobalStore'
+// import Theme from './../../Theme/Theme.js'
 
 function App() {
-	const [darkMode, setDarkMode] = useState(false);
+	// const Mytheme = Theme();
 	const theme = createMuiTheme({
 		palette: {
-			type: darkMode ? "dark" : "light",
 			secondory: {
-				light: '#7acb8b',
-				main: "#59BF6E",
-				dark: '#3e854d',
+				light: '#33eb91',
+				main: "#00e676",
+				dark: '#00a152',
 				contrastText: '#fff',
-	
-				// light: '#62c2ab',
-				// main: "#3bb397",
-				// dark: '#297d69',
-				// contrastText: '#fff',
-	
-				// light: '#34c5b0',
-				// main: "#02b79d",
-				// dark: '#01806d',
-				// contrastText: '#fff',
+
 			},
 			primary: {
-				// light: '#30326b',
-				// main: '#5850EC',
-				// dark: '#6a6cae',
-				// contrastText: '#000',
-				light: '#7acb8b',
+				light: '#48525d',
 				main: "#1B2735",
-				dark: '#3e854d',
+				dark: '#121b25',
 				contrastText: '#fff',
 				
 			},
-	
 			text: {
 				primary: '#000',
-			},
-	
-			Warning: {
-				light: '#ffb74d',
-				main: '#ff9800',
-				dark: '#f57c00',
-				contrastText: '#000',
 			},
 			background: {
 				paper: '#fff'
@@ -62,11 +47,54 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className="App">
+				{/* <Router>
+					<Switch>
+						<Route path="/login" exact component={Login} />
+						<Route path="/register" exact component={Register} />
+						<Route path="/">
+							<Grid container direction="row" className="mainContainer">
+								<Grid item lg={2} mid={3} sm={4} xs={0} style={{height: '100vh'}}>
+									<Sidebar />
+								</Grid>
+								<Grid item container lg={10} mid={9} sm={8} xs={0} style={{height: '100vh'}}>
+									<Grid item xs={12} className="navbarContainer"><Navbar /></Grid>
+									<Grid item container xs={12} className="pageContainer">
+										<Route path="/dashboard" exact component={Dashboard} />
+										<Route path="/projects" exact component={Project} />
+										<Route path="/analysis" exact component={Analysis} />
+										<Route path="/purchaseOrder" exact component={PurchaseOrder} />
+										<Route path="/supplier" exact component={Supplier} />
+										<Route path="/globalStore" exact component={GlobalStore} />
+									</Grid>
+								</Grid>
+							</Grid>
+						</Route>
+					</Switch>
+				</Router> */}
 				<Router>
 					<Switch>
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
-						<Route path="/dashboard" exact component={Dashboard} />
+						<Route path="/">
+							<Grid direction="row" container>
+								<Grid item lg={2} mid={3} sm={4} xs={0} className="sidebarContainer">
+									<Sidebar />
+								</Grid>
+								<Grid item lg={10} mid={9} sm={8} xs={0} className="rightsideContainer">
+									<Grid item lg={12} className="navbarContainer">
+										<Navbar />
+									</Grid>
+									<Grid item container className="pageContainer">
+										<Route path="/dashboard" exact component={Dashboard} />
+										<Route path="/projects" exact component={Project} />
+										<Route path="/analysis" exact component={Analysis} />
+										<Route path="/purchaseOrder" exact component={PurchaseOrder} />
+										<Route path="/supplier" exact component={Supplier} />
+										<Route path="/globalStore" exact component={GlobalStore} />
+									</Grid>
+								</Grid>
+							</Grid>
+						</Route>
 					</Switch>
 				</Router>
 			</div>

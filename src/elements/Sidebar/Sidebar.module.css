@@ -24,10 +24,20 @@ ul li {
     transition: color ease-in-out .3s;
 }
 
+ul li.current {
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #00e676;
+    transition: color ease-in-out .3s;
+}
+
 ul li:hover {
     background-color: rgba(211, 211, 211, 0.25);
     border-radius: 10px;
-    color: #59BF6E;
+    color: #00e676;
 }
 
 ul li i {
