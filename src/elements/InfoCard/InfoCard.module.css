@@ -1,0 +1,28 @@
+.infoCard {
+    /* background-color: #1B2735; */
+    border: 2px solid #1B2735;
+    color: #1B2735;
+    padding: 0;
+    margin: 1.5rem !important;
+}
+
+.statistic {
+    padding: 1rem;
+    width: 100%;
+}
+
+.title {
+    border-top: 2px solid #1B2735;
+    width: 100%;
+    color: #1B2735;
+    transition: background-color ease-in-out .2s;
+}
+
+.infoCard:hover {
+    cursor: pointer;
+}
+
+.infoCard:hover .title {
+    background-color: #1B2735;
+    color: #fff;
+}

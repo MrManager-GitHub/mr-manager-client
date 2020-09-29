@@ -1,12 +1,12 @@
 import React from 'react';
+import {Grid} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Logo from './../../elements/Logo/logo'
-import MyButton from './../../elements/Button/Button'
+import MyInput from './../Input/MyInputField'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,14 +22,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Your Detail', 'Company Details', 'Select'];
+  return ['Select Supplier', 'Project & Material', 'Add Quantity'];
 }
 
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
         return (
-          <h1>1</h1>
+          <Grid container direction="row" alignItems="center" xs={12}>
+            <Grid item xs={1} />
+            <Grid item xs={3}>
+              <MyInput label="Supplier" type="text" name="supplier" />
+            </Grid>
+            <Grid item xs={3}>
+              <Typography><i class="fas fa-user-plus"></i> Add Supplier</Typography>
+            </Grid>
+          </Grid>
         );
     case 1:
         return (
@@ -44,7 +52,7 @@ function getStepContent(stepIndex) {
   }
 }
 
-export default function HorizontalLabelPositionBelowStepper() {
+export default function HorizontalLabelPositionBelowStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();

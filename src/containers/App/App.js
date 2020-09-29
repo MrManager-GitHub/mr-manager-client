@@ -47,40 +47,16 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className="App">
-				{/* <Router>
-					<Switch>
-						<Route path="/login" exact component={Login} />
-						<Route path="/register" exact component={Register} />
-						<Route path="/">
-							<Grid container direction="row" className="mainContainer">
-								<Grid item lg={2} mid={3} sm={4} xs={0} style={{height: '100vh'}}>
-									<Sidebar />
-								</Grid>
-								<Grid item container lg={10} mid={9} sm={8} xs={0} style={{height: '100vh'}}>
-									<Grid item xs={12} className="navbarContainer"><Navbar /></Grid>
-									<Grid item container xs={12} className="pageContainer">
-										<Route path="/dashboard" exact component={Dashboard} />
-										<Route path="/projects" exact component={Project} />
-										<Route path="/analysis" exact component={Analysis} />
-										<Route path="/purchaseOrder" exact component={PurchaseOrder} />
-										<Route path="/supplier" exact component={Supplier} />
-										<Route path="/globalStore" exact component={GlobalStore} />
-									</Grid>
-								</Grid>
-							</Grid>
-						</Route>
-					</Switch>
-				</Router> */}
 				<Router>
 					<Switch>
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
 						<Route path="/">
 							<Grid direction="row" container>
-								<Grid item lg={2} mid={3} sm={4} xs={0} className="sidebarContainer">
+								<Grid item lg={2}sm={4} xs={0} className="sidebarContainer">
 									<Sidebar />
 								</Grid>
-								<Grid item lg={10} mid={9} sm={8} xs={0} className="rightsideContainer">
+								<Grid item lg={10} sm={8} xs={12} className="rightsideContainer">
 									<Grid item lg={12} className="navbarContainer">
 										<Navbar />
 									</Grid>

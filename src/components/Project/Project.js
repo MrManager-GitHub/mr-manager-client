@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Grid,Typography } from '@material-ui/core'
-import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+
 import CreateProjectCard from './../../elements/CreateProjectCard/CreateProjectCard'
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
+import ProjectCard from './../../elements/ProjectCard/ProjectCard'
 
 import styles from './Project.module.css'
 class Project extends Component {
@@ -13,7 +12,7 @@ class Project extends Component {
     
         this.state = {
             isExpand: false,
-            numberOfProject: ''
+            numberOfProject: '1'
         }
     }
 
@@ -26,7 +25,7 @@ class Project extends Component {
         return (
             <Grid container direction="row" className={styles.projectcontainer}>
                 <Grid item xs={12} align="right" className={styles.addprojectcontainer}>
-                    <Typography variant="h3" onClick={this.toggleFormHandler}>
+                    <Typography variant="h3" display="inline" onClick={this.toggleFormHandler}>
                         <AddIcon fontSize="inherit" className={this.state.isExpand ? styles.closeicon : styles.addicon} />
                     </Typography>
                     {
@@ -35,14 +34,15 @@ class Project extends Component {
                                 <CreateProjectCard />
                             </div>
                         :
-                        null
+                            this.state.numberOfProject == '0' ?
+                                <div className={styles.arrow}>
+                                </div>
+                            :
+                                null
                     }
                 </Grid>
-                <Grid item xs={12} container justify="center" alignItems="center" className={styles.projectCard}>
-                    <Grid item xs={2}><Typography variant="h6" className={styles.projectTitle} align="center">Skyline</Typography></Grid>
-                    <Grid item xs={8}/>
-                    <Grid item xs={2}><Typography color="primary" align="center"><EditIcon className={styles.editIcon} /><DeleteIcon className={styles.deleteIcon} /></Typography></Grid>
-                </Grid>
+                <ProjectCard projectName="Skyline" projectAddress="221B Baker Street" projectArea="300000" projectValuation="15" projectStartingDate="30/10/2020" projectEndingDate="25/05/2022" />
+                <ProjectCard projectName="Silver Heights" projectAddress="15 Wall Street" projectArea="150000" projectValuation="48" projectStartingDate="28/9/2020" projectEndingDate="15/07/2023" />
             </Grid>
         )
     }

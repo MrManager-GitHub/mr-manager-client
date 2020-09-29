@@ -1,0 +1,19 @@
+.projectCard {
+    background-color: #fff;
+    margin-top: 2rem !important;
+    border: 1px solid #1B2735;
+}
+
+.projectTitle {
+    background-color: #1B2735;
+    width: 80%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: #fff;
+}
+
+.editIcon,
+.deleteIcon {
+    cursor: pointer;
+    margin-left: 1.5rem;
+}

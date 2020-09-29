@@ -1,0 +1,23 @@
+.supplierTableContainer {
+    background-color: #fff;
+    margin-top: 2rem !important;
+    border-radius: 10px;
+}
+
+.supplierTableHead {
+    background-color: #3b495a;
+}
+
+.header {
+    color: #fff;
+}
+
+.data {
+    color: #3b495a;
+}
+
+.editIcon,
+.deleteIcon {
+    margin-left: 0.75rem;
+    cursor: pointer;
+}
