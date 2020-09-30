@@ -23,7 +23,7 @@ function createData(name, email, contact, product) {
     createData('BYG','BYG1011@gmail.com','-','Wooden furniture'),
 ];
   
-function SupplierTable() {
+function SupplierTable(props) {
     return (
         <TableContainer className={styles.supplierTableContainer}>
             <Table>

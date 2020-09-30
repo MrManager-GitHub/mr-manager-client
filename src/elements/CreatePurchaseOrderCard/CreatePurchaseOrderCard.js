@@ -16,7 +16,7 @@ const initialValues = {
 function CreatePurchaseOrderCard() {
     const {values,setValues,changeHandler } = CreatePurchaseOrderCardState(initialValues);
     return (
-        <Grid container direction="row" justify="space-around" className={styles.maincontainer}>
+        <Grid container direction="row" alignItems="center" justify="center" className={styles.maincontainer}>
             {/* <Grid item xs={4} container spacing={2} className={styles.division1} >
                 <Grid item xs={6}><MyInputField type="text" label="Supplier name" name="supplierName" value={values.supplierName} onChange={changeHandler} fullWidth={true} /></Grid><Grid item xs={6}/>
                 <Grid item xs={7}><MyInputField type="text" label="Product name" name="productName" value={values.productName} onChange={changeHandler} fullWidth={true} /></Grid><Grid item xs={5} />

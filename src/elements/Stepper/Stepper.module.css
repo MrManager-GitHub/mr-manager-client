@@ -1,0 +1,23 @@
+.stepInstructionContainer {
+    margin-bottom: 1.5rem !important;
+}
+
+.formControl {
+    width: 100%;
+}
+
+.addSupplier {
+    cursor: pointer;
+}
+
+.supplierTableHead {
+    background-color: #3b495a;
+}
+
+.header {
+    color: #fff;
+}
+
+.data {
+    color: #3b495a;
+}
