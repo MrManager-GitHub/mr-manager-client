@@ -1,0 +1,30 @@
+.purchaseOrderCard {
+    background-color: #fff;
+    margin-top: 2rem !important;
+}
+
+.POTableHead {
+    background-color: #3b495a;
+}
+
+.header {
+    color: #fff;
+}
+
+.data {
+    color: #3b495a;
+}
+
+.reviewDraft {
+    color: #3b495a;
+    cursor: pointer;
+}
+
+.deleteIcon {
+    color: #3b495a;
+}
+
+.deleteIcon:hover {
+    color: #1B2735;
+    cursor: pointer;
+}

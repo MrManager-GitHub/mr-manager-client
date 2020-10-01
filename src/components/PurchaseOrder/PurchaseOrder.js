@@ -3,12 +3,13 @@ import { Grid, Typography } from '@material-ui/core'
 import AddIcon from '@material-ui/icons/Add';
 
 import styles from './PurchaseOrder.module.css'
-import CreatePurchaseOrderCard from './../../elements/CreatePurchaseOrderCard/CreatePurchaseOrderCard'
+import CreatePurchaseOrderCard from './../../elements/CreatePurchaseOrderCard/CreatePurchaseOrderCard';
+import PurchaseOrderCard from './../../elements/PurchaseOrderCard/PurchaseOrderCard'
 
 class PurchaseOrder extends Component {
   state = {
     isExpand: false,
-    numberOfPurchaseOrder: '0'
+    numberOfPurchaseOrder: '1'
   }
 
   toggleFormHandler = () => {
@@ -37,7 +38,7 @@ class PurchaseOrder extends Component {
                 null
           }
         </Grid>
-        {/* <SupplierTable /> */}
+        <PurchaseOrderCard />
       </Grid>
     )
   }
