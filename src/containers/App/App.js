@@ -31,7 +31,6 @@ function App() {
 				main: "#1B2735",
 				dark: '#121b25',
 				contrastText: '#fff',
-				
 			},
 			text: {
 				primary: '#000',

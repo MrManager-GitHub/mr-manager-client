@@ -73,10 +73,18 @@ function getStepContent(stepIndex) {
         return (
           <Grid container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
             <Grid item xs={3}>
-              <MyInputField name="material" label="Material name" />
+              <MyInputField type="text" name="material" label="Material name" />
             </Grid>
-            <Grid item xs={6} />
-            <Grid item xs={3}>
+            <Grid item xs={1} />
+            <Grid item xs={2}>
+              <MyInputField type="number" name="quantity" label="Quantity" />
+            </Grid>
+            <Grid item xs={1} />
+            <Grid item xs={2}>
+              <MyInputField type="number" name="rate" label="Rate" />
+            </Grid>
+            <Grid item xs={1} />
+            <Grid item xs={2}>
               <FormControl className={styles.formControl}>
                 <InputLabel id="demo-simple-select-label">Select Project</InputLabel>
                 <Select labelId="demo-simple-select-label" id="demo-simple-select">
@@ -108,7 +116,7 @@ function getStepContent(stepIndex) {
                     {rows.map((row) => (
                         <TableRow key={row.name}>
                           <TableCell align="center"><Typography className={styles.data} variant="body1">{row.projectName}</Typography></TableCell>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.suplierName}</Typography></TableCell>
+                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.supplierName}</Typography></TableCell>
                           <TableCell align="center"><Typography className={styles.data} variant="body1">{row.materialName}</Typography></TableCell>
                           <TableCell align="center"><Typography className={styles.data} variant="body1">{row.quantity}</Typography></TableCell>
                           <TableCell align="center"><Typography className={styles.data} variant="body1">{row.rate}</Typography></TableCell>
