@@ -1,5 +1,5 @@
-import React,{useState} from 'react';
-import {Grid} from '@material-ui/core'
+import React, { useState } from 'react';
+import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -39,7 +39,7 @@ function createData(projectName, supplierName, materialName, quantity, rate, amo
 }
 
 const rows = [
-  createData('Project 1', 'Supplier 1','ACC Block','10','50','500'),
+  createData('Project 1', 'Supplier 1', 'ACC Block', '10', '50', '500'),
 ];
 
 function getSteps() {
@@ -47,80 +47,80 @@ function getSteps() {
 }
 
 function getStepContent(stepIndex) {
- 
+
   switch (stepIndex) {
     case 0:
-        return (
-          <Grid item container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
-            {/* <Grid item xs={1} /> */}
-            <Grid item xs={4}>
-              <FormControl className={styles.formControl}>
-                <InputLabel id="demo-simple-select-label">Select Supplier</InputLabel>
-                <Select labelId="demo-simple-select-label" id="demo-simple-select">
-                  <MenuItem value={10}>Supplier 1</MenuItem>
-                  <MenuItem value={20}>Supplier 2</MenuItem>
-                  <MenuItem value={30}>Supplier 3</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs={5} />
-            <Grid item xs={3}>
-              <Typography color="primary" className={styles.addSupplier}><i class="fas fa-user-plus"></i> Add Supplier</Typography>
-            </Grid>        
+      return (
+        <Grid item container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
+          {/* <Grid item xs={1} /> */}
+          <Grid item xs={4}>
+            <FormControl className={styles.formControl}>
+              <InputLabel id="demo-simple-select-label">Select Supplier</InputLabel>
+              <Select labelId="demo-simple-select-label" id="demo-simple-select">
+                <MenuItem value={10}>Supplier 1</MenuItem>
+                <MenuItem value={20}>Supplier 2</MenuItem>
+                <MenuItem value={30}>Supplier 3</MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
-        );
+          <Grid item xs={5} />
+          <Grid item xs={3}>
+            <Typography color="primary" className={styles.addSupplier}><i class="fas fa-user-plus"></i> Add Supplier</Typography>
+          </Grid>
+        </Grid>
+      );
     case 1:
-        return (
-          <Grid container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
-            <Grid item xs={3}>
-              <MyInputField name="material" label="Material name" />
-            </Grid>
-            <Grid item xs={6} />
-            <Grid item xs={3}>
-              <FormControl className={styles.formControl}>
-                <InputLabel id="demo-simple-select-label">Select Project</InputLabel>
-                <Select labelId="demo-simple-select-label" id="demo-simple-select">
-                  <MenuItem value={10}>Project 1</MenuItem>
-                  <MenuItem value={20}>Project 2</MenuItem>
-                  <MenuItem value={30}>Project 3</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
+      return (
+        <Grid container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
+          <Grid item xs={3}>
+            <MyInputField name="material" label="Material name" />
           </Grid>
-        );
+          <Grid item xs={6} />
+          <Grid item xs={3}>
+            <FormControl className={styles.formControl}>
+              <InputLabel id="demo-simple-select-label">Select Project</InputLabel>
+              <Select labelId="demo-simple-select-label" id="demo-simple-select">
+                <MenuItem value={10}>Project 1</MenuItem>
+                <MenuItem value={20}>Project 2</MenuItem>
+                <MenuItem value={30}>Project 3</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+        </Grid>
+      );
     case 2:
-        return (
-          <Grid container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
-            <Grid item container justify="center" alignItems="center" xs={12}>
+      return (
+        <Grid container justify="center" alignItems="center" xs={12} className={styles.stepInstructionContainer}>
+          <Grid item container justify="center" alignItems="center" xs={12}>
             <TableContainer className={styles.supplierTableContainer}>
-            <Table>
+              <Table>
                 <TableHead className={styles.supplierTableHead}>
-                    <TableRow>
-                        <TableCell align="center"><Typography className={styles.header} variant="body1">Project</Typography></TableCell>
-                        <TableCell align="center"><Typography className={styles.header} variant="body1">Supplier</Typography></TableCell>
-                        <TableCell align="center"><Typography className={styles.header} variant="body1">Material</Typography></TableCell>
-                        <TableCell align="center"><Typography className={styles.header} variant="body1">Quantity</Typography></TableCell>
-                        <TableCell align="center"><Typography className={styles.header} variant="body1">Rate</Typography></TableCell>
-                        <TableCell align="center"><Typography className={styles.header} variant="body1">Amount</Typography></TableCell>
-                    </TableRow>
+                  <TableRow>
+                    <TableCell align="center"><Typography className={styles.header} variant="body1">Project</Typography></TableCell>
+                    <TableCell align="center"><Typography className={styles.header} variant="body1">Supplier</Typography></TableCell>
+                    <TableCell align="center"><Typography className={styles.header} variant="body1">Material</Typography></TableCell>
+                    <TableCell align="center"><Typography className={styles.header} variant="body1">Quantity</Typography></TableCell>
+                    <TableCell align="center"><Typography className={styles.header} variant="body1">Rate</Typography></TableCell>
+                    <TableCell align="center"><Typography className={styles.header} variant="body1">Amount</Typography></TableCell>
+                  </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.name}>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.projectName}</Typography></TableCell>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.suplierName}</Typography></TableCell>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.materialName}</Typography></TableCell>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.quantity}</Typography></TableCell>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.rate}</Typography></TableCell>
-                          <TableCell align="center"><Typography className={styles.data} variant="body1">{row.amount}</Typography></TableCell>
-                        </TableRow>
-                    ))}
+                  {rows.map((row) => (
+                    <TableRow key={row.name}>
+                      <TableCell align="center"><Typography className={styles.data} variant="body1">{row.projectName}</Typography></TableCell>
+                      <TableCell align="center"><Typography className={styles.data} variant="body1">{row.suplierName}</Typography></TableCell>
+                      <TableCell align="center"><Typography className={styles.data} variant="body1">{row.materialName}</Typography></TableCell>
+                      <TableCell align="center"><Typography className={styles.data} variant="body1">{row.quantity}</Typography></TableCell>
+                      <TableCell align="center"><Typography className={styles.data} variant="body1">{row.rate}</Typography></TableCell>
+                      <TableCell align="center"><Typography className={styles.data} variant="body1">{row.amount}</Typography></TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
-            </Table>
-        </TableContainer>
-            </Grid>
+              </Table>
+            </TableContainer>
           </Grid>
-        );
+        </Grid>
+      );
     default:
       return 'Something went wrong!!!';
   }
@@ -162,25 +162,25 @@ export default function HorizontalLabelPositionBelowStepper(props) {
             <Button onClick={handleReset}>Reset</Button>
           </div>
         ) : (
-          <Grid item container xs={8} justify="center" alignItems="center">
-            {/* <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography> */}
-            {getStepContent(activeStep)}
-            
-            <Grid item container xs={12}> 
-              <Grid item xs={1}>
-                <Button disabled={activeStep === 0} onClick={handleBack} className={classes.backButton}>
-                  Back
+            <Grid item container xs={8} justify="center" alignItems="center">
+              {/* <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography> */}
+              {getStepContent(activeStep)}
+
+              <Grid item container xs={12}>
+                <Grid item xs={1}>
+                  <Button disabled={activeStep === 0} onClick={handleBack} className={classes.backButton}>
+                    Back
                 </Button>
-              </Grid>
-              <Grid item xs={9} />  
-              <Grid item xs={2}>
-                <Button variant="contained" color="primary" onClick={handleNext}>
-                  {activeStep === steps.length - 1 ? 'Create P.O.' : 'Next'}
-                </Button>
+                </Grid>
+                <Grid item xs={9} />
+                <Grid item xs={2}>
+                  <Button variant="contained" color="primary" onClick={handleNext}>
+                    {activeStep === steps.length - 1 ? 'Create P.O.' : 'Next'}
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-        )}
+          )}
       </Grid>
     </Grid>
   );

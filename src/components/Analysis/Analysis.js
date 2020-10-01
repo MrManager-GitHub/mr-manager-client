@@ -1,11 +1,9 @@
 import React from 'react'
 
-function Analysis() {
-    return (
-        <div>
-            <h1>Analysis</h1>
-        </div>
-    )
-}
+const analysis = props => (
+  <div>
+    <h1>Analysis</h1>
+  </div>
+);
 
-export default Analysis
+export default analysis

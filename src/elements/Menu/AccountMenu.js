@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -55,28 +54,28 @@ export default function AccountMenu() {
   return (
     <div>
       {/* <button aria-controls="customized-menu" aria-haspopup="true" variant="contained" color="primary" onClick={handleClick}> */}
-        <Avatar aria-controls="customized-menu" aria-haspopup="true" onClick={handleClick} variant="rounded">N</Avatar>
+      <Avatar aria-controls="customized-menu" aria-haspopup="true" onClick={handleClick} variant="rounded">N</Avatar>
       {/* </button> */}
-        <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-          <StyledMenuItem>
-            <ListItemIcon>
-              <EditIcon fontSize="small"/>
-            </ListItemIcon>
-            <ListItemText primary="Edit Profile" />
-          </StyledMenuItem>
-          <StyledMenuItem>
-            <ListItemIcon>
-              <ViewColumnIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="Your Plan" />
-          </StyledMenuItem>
-          <StyledMenuItem>
-            <ListItemIcon>
-              <ExitToAppIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="Logout" />
-          </StyledMenuItem>
-        </StyledMenu>
+      <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+        <StyledMenuItem>
+          <ListItemIcon>
+            <EditIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Edit Profile" />
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <ListItemIcon>
+            <ViewColumnIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Your Plan" />
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <ListItemIcon>
+            <ExitToAppIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary="Logout" />
+        </StyledMenuItem>
+      </StyledMenu>
     </div>
   );
 }
