@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@material-ui/core';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import './App.css';
@@ -17,32 +17,54 @@ import GlobalStore from '../../components/GlobalStore/GlobalStore'
 import { theme } from '../../Theme/Theme'
 
 class App extends Component {
+  state = {
+    isAuthenticated: false,
+    token: ''
+  }
+
+  onAuthHandler = token => {
+    this.setState({
+      isAuthenticated: true,
+      token: token
+    });
+  }
+
   render() {
     return (
       <ThemeProvider theme={theme}>
         <div className="App">
-          <Grid direction="row" container>
-            <Grid item xl={2} lg={3} sm={4} xs={0} className="sidebarContainer">
-              <Sidebar />
-            </Grid>
-            <Grid item xl={10} lg={9} sm={8} xs={12} className="rightsideContainer">
-              <Grid item lg={12} className="navbarContainer">
-                <Navbar />
+          <Switch>
+            <Route
+              exact path="/login"
+              component={() => <Login isAuthenticated={this.state.isAuthenticated} onAuth={this.onAuthHandler} />}
+            />
+            <Route exact path="/register" component={Register} />
+            <Route path="/" component={() => (
+              <Grid direction="row" container>
+                <Grid item xl={2} lg={3} sm={4} xs={0} className="sidebarContainer">
+                  <Sidebar />
+                </Grid>
+                <Grid item xl={10} lg={9} sm={8} xs={12} className="rightsideContainer">
+                  <Grid item lg={12} className="navbarContainer">
+                    <Navbar />
+                  </Grid>
+                  <Grid item container className="pageContainer">
+                    <Switch>
+                      <Route
+                        exact path="/"
+                        component={() => <Dashboard isAuthenticated={this.state.isAuthenticated} />}
+                      />
+                      <Route exact path="/projects" component={Project} />
+                      <Route exact path="/analysis" component={Analysis} />
+                      <Route exact path="/purchaseOrder" component={PurchaseOrder} />
+                      <Route exact path="/supplier" component={Supplier} />
+                      <Route exact path="/globalStore" component={GlobalStore} />
+                    </Switch>
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item container className="pageContainer">
-                <Switch>
-                  <Route exact path="/" component={Dashboard} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/projects" component={Project} />
-                  <Route exact path="/analysis" component={Analysis} />
-                  <Route exact path="/purchaseOrder" component={PurchaseOrder} />
-                  <Route exact path="/supplier" component={Supplier} />
-                  <Route exact path="/globalStore" component={GlobalStore} />
-                </Switch>
-              </Grid>
-            </Grid>
-          </Grid>
+            )} />
+          </Switch>
         </div>
       </ThemeProvider>
     );

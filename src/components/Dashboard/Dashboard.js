@@ -7,9 +7,13 @@ import Project from '../../containers/Project/Project'
 import Site from './../../elements/Images/site2.png'
 import Worker from './../../elements/Images/worker.png'
 import Block from './../../elements/Images/block.png'
+import { Redirect } from 'react-router-dom'
 
 class Dashboard extends Component {
   render() {
+    if (!this.props.isAuthenticated) {
+      return <Redirect to="/login" />
+    }
     return (
       <Grid container direction="row" className={styles.dashboardcontainer}>
         <Grid item container xs={12} justify="space-around">
