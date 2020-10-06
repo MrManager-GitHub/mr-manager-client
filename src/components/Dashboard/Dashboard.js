@@ -8,15 +8,17 @@ import Site from './../../elements/Images/site2.png'
 import Worker from './../../elements/Images/worker.png'
 import Block from './../../elements/Images/block.png'
 import { Redirect } from 'react-router-dom'
+import LineChart from './../../elements/LineChart/LineChart'
+import DoughnutChart from './../../elements/DoughnutChart/DoughnutChart'
 
 class Dashboard extends Component {
   render() {
-    if (!this.props.isAuthenticated) {
-      return <Redirect to="/login" />
-    }
+    // if (!this.props.isAuthenticated) {
+    //   return <Redirect to="/login" />
+    // }
     return (
       <Grid container direction="row" className={styles.dashboardcontainer}>
-        <Grid item container xs={12} justify="space-around">
+        <Grid item container xs={12} justify="space-between" className={styles.statisticCardContainer}>
           <Grid item container xs={3} className={styles.project}>
             <Grid item xs={8} className={styles.info}>
               <Typography variant="h4" color="inherit">05</Typography>
@@ -55,8 +57,15 @@ class Dashboard extends Component {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item container xs={12}>
-
+        <Grid item container justify="space-between" xs={12}>
+          <Grid item xs={6} className={styles.lineChartContainer}>
+            <Typography variant="h5" color="primary">Expenses</Typography>
+            <LineChart />
+          </Grid>
+          <Grid item xs={5} className={styles.lineChartContainer}>
+            <Typography variant="h5" color="primary">Type of Expense</Typography>
+            <DoughnutChart />
+          </Grid>
         </Grid>
       </Grid>
     )
