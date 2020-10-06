@@ -28,9 +28,16 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     }).then(res => {
-      console.log(res);
       if (res.data !== null && res.data.token !== undefined) {
-        this.props.onAuth(res.data.token);
+        this.props.onAuth();
+        const tokenDetails = JSON.parse(window.atob(res.data.token.split('.')[1]));
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('email', tokenDetails.user_email);
+        localStorage.setItem('id', tokenDetails.user_id);
+        localStorage.setItem('firstName', tokenDetails.first_name);
+        localStorage.setItem('lastName', tokenDetails.last_name);
+        localStorage.setItem('subscription', tokenDetails.subscription);
+        localStorage.setItem('expiryTime', tokenDetails.exp);
         this.setState({
           isAuthenticated: true
         });

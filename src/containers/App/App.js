@@ -17,15 +17,23 @@ import GlobalStore from '../../components/GlobalStore/GlobalStore'
 import { theme } from '../../Theme/Theme'
 
 class App extends Component {
-  state = {
-    isAuthenticated: false,
-    token: ''
+  constructor(props) {
+    super(props);
+
+    if (localStorage.getItem('expiryTime') > new Date().getTime() / 1000) {
+      this.state = {
+        isAuthenticated: true
+      }
+    } else {
+      this.state = {
+        isAuthenticated: false
+      }
+    }
   }
 
-  onAuthHandler = token => {
+  onAuthHandler = () => {
     this.setState({
-      isAuthenticated: true,
-      token: token
+      isAuthenticated: true
     });
   }
 

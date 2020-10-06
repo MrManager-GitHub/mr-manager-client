@@ -2,8 +2,8 @@ import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import Avatar from '@material-ui/core/Avatar';
-import Chip from '@material-ui/core/Chip';
+// import Avatar from '@material-ui/core/Avatar';
+// import Chip from '@material-ui/core/Chip';
 import InfoCard from './../InfoCard/InfoCard'
 
 import styles from './ProjectCard.module.css'

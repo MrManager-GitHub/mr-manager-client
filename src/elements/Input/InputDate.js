@@ -2,7 +2,8 @@ import 'date-fns';
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker, } from '@material-ui/pickers';
+import { MuiPickersUtilsProvider, KeyboardDatePicker, } from '@material-ui/pickers';
+// import { KeyboardTimePicker } from '@material-ui/pickers';
 
 export default function InputDate(props) {
   // The first commit of Material-UI
