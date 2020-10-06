@@ -41,10 +41,10 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route path="/" component={() => (
               <Grid direction="row" container>
-                <Grid item xl={2} lg={3} sm={4} xs={0} className="sidebarContainer">
+                <Grid item xl={2} lg={2} sm={4} xs={0} className="sidebarContainer">
                   <Sidebar />
                 </Grid>
-                <Grid item xl={10} lg={9} sm={8} xs={12} className="rightsideContainer">
+                <Grid item xl={10} lg={10} sm={8} xs={12} className="rightsideContainer">
                   <Grid item lg={12} className="navbarContainer">
                     <Navbar />
                   </Grid>

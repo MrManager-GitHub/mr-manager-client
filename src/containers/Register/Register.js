@@ -14,7 +14,7 @@ class Register extends Component {
             <div>
                 <Grid container justify="center" alignItems="center" alignItems="center" className={styles.maincontainer}>
                     <Grid container xs={8} justify="center" className={styles.cardcontainer}>
-                        <Grid item xs={10} container direction="row" spacing={2} className={styles.formcontainer}>
+                        <Grid item xs={11} container direction="row" spacing={2} className={styles.formcontainer}>
                             <Grid item xs={12} className={styles.inputcontainer}><Typography variant="h4" align="center" color="primary">Signup</Typography></Grid>
                             <Grid item xs={5}>
                                 <MyInputField type="text" label="First name" name="fname"/>
