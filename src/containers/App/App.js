@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from '@material-ui/core';
-import { Switch, Route, Redirect } from 'react-router-dom'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { Switch, Route } from 'react-router-dom'
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import './App.css';
 import Login from '../Login/Login'
@@ -46,7 +46,7 @@ class App extends Component {
               exact path="/login"
               component={() => <Login isAuthenticated={this.state.isAuthenticated} onAuth={this.onAuthHandler} />}
             />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/register" component={() => <Register isAuthenticated={this.state.isAuthenticated} onRegister={this.onAuthHandler} />} />
             <Route path="/" component={() => (
               <Grid direction="row" container>
                 <Grid item xl={2} lg={3} sm={4} xs={0} className="sidebarContainer">

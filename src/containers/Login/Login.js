@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 import { Grid, Button, Link, Typography, Paper, Box } from '@material-ui/core'
 import axios from 'axios';
 
@@ -14,7 +15,8 @@ class Login extends Component {
     isAuthenticated: this.props.isAuthenticated,
     email: '',
     password: '',
-    error: ''
+    error: '',
+    isLoading: false
   }
 
   inputChangeHandler = event => {
@@ -23,7 +25,9 @@ class Login extends Component {
   }
 
   onSubmitHandler = () => {
-    // Validation is left
+    this.setState({
+      isLoading: true
+    });
     axios.post('https://ervgglfmyi.execute-api.us-east-1.amazonaws.com/dev/login', {
       email: this.state.email,
       password: this.state.password
@@ -39,20 +43,23 @@ class Login extends Component {
         localStorage.setItem('subscription', tokenDetails.subscription);
         localStorage.setItem('expiryTime', tokenDetails.exp);
         this.setState({
-          isAuthenticated: true
+          isAuthenticated: true,
+          isLoading: false
         });
       } else {
         this.setState({
           error: 'Email or Password was wrong',
           isAuthenticated: false,
           email: '',
-          password: ''
+          password: '',
+          isLoading: false
         });
       }
     }).catch(err => {
       console.log(err);
       this.setState({
-        error: 'Something went wrong!'
+        error: 'Something went wrong!',
+        isLoading: false
       });
     });
   }
@@ -74,7 +81,7 @@ class Login extends Component {
             <Grid item className={styles.contentcontainer2}>
               <Typography variant="subtitle2" color="textPrimary">
                 Don't have an account?
-								<Link component="button" variant="body2" onClick={() => { this.props.history.push('/register') }}>Signup</Link>
+								<Link component="button" variant="body2" onClick={() => { this.props.history.push('/register') }}><strong>&nbsp;SignUp</strong></Link>
               </Typography>
             </Grid>
             <br />
@@ -89,9 +96,9 @@ class Login extends Component {
               {/* <Button variant="contained" fullWidth color="primary">
 								Login
 							</Button> */}
-              <MyButton variant="h6" click={this.onSubmitHandler}>Login</MyButton>
+              <MyButton variant="h6" click={this.onSubmitHandler} isLoading={this.state.isLoading}>Login</MyButton>
             </Grid>
-            <p>{this.state.error}</p>
+            <p style={{ marginTop: '8px' }}>{this.state.error}</p>
           </Grid>
         </Grid>
       </div>
@@ -99,4 +106,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login);
