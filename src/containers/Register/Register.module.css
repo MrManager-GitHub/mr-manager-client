@@ -25,3 +25,14 @@
 .imgcontainer {
     background-color: #45489a;
 }
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: initial;
+}
+
+.buttonContainer > div {
+  width: 100%;
+}
