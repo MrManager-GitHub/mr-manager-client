@@ -1,14 +1,25 @@
 .maincontainer {
     margin: 0;
     height: 100vh;
+    background-color: #1B2735;
+    /* background-image: url('./../../elements/Images/Web 1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .cardcontainer {
-    background-color: #f7f7f7;
+    background-color: #fff;
+    border-radius: 10px;
+    background-image: url('./../../elements//Images/construction.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: auto 100%;
 }
 
 .formcontainer {
     padding: 2rem;
+    font-family: 'Cormorant', serif;
 }
 
 .imgcontainer {
