@@ -30,22 +30,23 @@ function ProjectCard(props) {
       </Grid>
       <Grid item xs={2} />
 
-      <Grid item xs={2} />
-      <Grid item xs={1}>
-        <InfoCard type="House" number="50" />
-      </Grid>
-      <Grid item xs={1} />
-      <Grid item xs={1}>
-        <InfoCard type="Shop" number="13" />
-      </Grid>
-      <Grid item xs={1} />
-      <Grid item xs={1}>
-        <InfoCard type="Plot" number="7" />
-      </Grid>
-      <Grid item xs={1} />
-      <Grid item xs={1}>
-        <InfoCard type="Workers" number="50" />
-      </Grid>
+      <div className={styles.cardContainer}>
+        {props.house !== undefined ? <Grid item xs={1}>
+          <InfoCard type="House" number={props.house} />
+        </Grid> : null}
+        {props.shop !== undefined ? <Grid item xs={1}>
+          <InfoCard type="Shop" number={props.shop} />
+        </Grid> : null}
+        {props.plot !== undefined ? <Grid item xs={1}>
+          <InfoCard type="Plot" number={props.plot} />
+        </Grid> : null}
+        {props.flat !== undefined ? <Grid item xs={1}>
+          <InfoCard type="Flat" number={props.flat} />
+        </Grid> : null}
+        <Grid item xs={1}>
+          <InfoCard type="Workers" number={props.workers} />
+        </Grid>
+      </div>
     </Grid>
   )
 }

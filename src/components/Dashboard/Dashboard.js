@@ -13,9 +13,9 @@ import DoughnutChart from './../../elements/DoughnutChart/DoughnutChart'
 
 class Dashboard extends Component {
   render() {
-    // if (!this.props.isAuthenticated) {
-    //   return <Redirect to="/login" />
-    // }
+    if (!this.props.isAuthenticated) {
+      return <Redirect to="/login" />
+    }
     return (
       <Grid container direction="row" className={styles.dashboardcontainer}>
         <Grid item container xs={12} justify="space-between" className={styles.statisticCardContainer}>

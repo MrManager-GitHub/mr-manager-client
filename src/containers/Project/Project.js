@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { Grid, Typography } from '@material-ui/core'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Grid, Typography } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
 import styles from './Project.module.css'
@@ -9,13 +10,37 @@ import CreateProjectCard from '../../elements/CreateProjectCard/CreateProjectCar
 class Project extends Component {
   state = {
     isExpand: false,
-    numberOfProject: '1'
+    numberOfProject: '1',
+    projects: []
   }
 
   toggleFormHandler = () => {
     this.setState(prevState => ({
       isExpand: !prevState.isExpand,
     }));
+  }
+
+  projectSubmitHandler = () => {
+    console.log('project submitted');
+    axios.post('https://ervgglfmyi.execute-api.us-east-1.amazonaws.com/dev/projects', {
+      token: localStorage.getItem('token')
+    }).then(res => {
+      console.log(res.data);
+      this.setState({
+        projects: res.data.Items
+      });
+    });
+  }
+
+  componentDidMount() {
+    axios.post('https://ervgglfmyi.execute-api.us-east-1.amazonaws.com/dev/projects', {
+      token: localStorage.getItem('token')
+    }).then(res => {
+      console.log(res.data);
+      this.setState({
+        projects: res.data.Items
+      });
+    });
   }
 
   render() {
@@ -28,7 +53,7 @@ class Project extends Component {
           {
             this.state.isExpand ?
               <div className={styles.formcontainer}>
-                <CreateProjectCard />
+                <CreateProjectCard submit={this.projectSubmitHandler} />
               </div>
               :
               this.state.numberOfProject == '0' ?
@@ -38,8 +63,22 @@ class Project extends Component {
                 null
           }
         </Grid>
-        <ProjectCard projectName="Skyline" projectAddress="221B Baker Street" projectArea="300000" projectValuation="15" projectStartingDate="30/10/2020" projectEndingDate="25/05/2022" />
-        <ProjectCard projectName="Silver Heights" projectAddress="15 Wall Street" projectArea="150000" projectValuation="48" projectStartingDate="28/9/2020" projectEndingDate="15/07/2023" />
+        {this.state.projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            projectName={project.project_name}
+            projectAddress={project.address}
+            projectArea={project.area}
+            projectValuation={project.project_valuation}
+            projectStartingDate={project.start_date}
+            projectEndingDate={project.end_date}
+            house={project.house}
+            shop={project.shop}
+            plot={project.plot}
+            flat={project.flat}
+            workers={project.workers}
+          />
+        ))}
       </Grid>
     )
   }

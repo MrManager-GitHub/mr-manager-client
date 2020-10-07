@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function CreateProjectCardState(initialValues) {
+function CreateProjectCardState(initialValues, props) {
   const [values, setValues] = useState(initialValues);
   const startingDateChangeHandler = date => {
     setValues({
@@ -42,7 +42,6 @@ function CreateProjectCardState(initialValues) {
       flat: values.flat,
       shop: values.shop
     };
-    console.log(payload);
     axios
       .post('https://ervgglfmyi.execute-api.us-east-1.amazonaws.com/dev/project', payload)
       .then(res => {
@@ -51,6 +50,7 @@ function CreateProjectCardState(initialValues) {
           ...values,
           isLoading: false
         });
+        props.submit();
       }).catch(err => {
         console.log(err);
         setValues({

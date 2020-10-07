@@ -24,9 +24,9 @@ const initialValues = {
   isLoading: false
 }
 
-function CreateProjectCard() {
+function CreateProjectCard(props) {
 
-  const { values, setValues, changeHandler, startingDateChangeHandler, endingDateChangeHandler, submitHandler } = CreateProjectCardState(initialValues);
+  const { values, setValues, changeHandler, startingDateChangeHandler, endingDateChangeHandler, submitHandler } = CreateProjectCardState(initialValues, props);
 
   return (
     <Grid container direction="row" justify="space-around" className={styles.maincontainer}>

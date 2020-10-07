@@ -17,3 +17,13 @@
     cursor: pointer;
     margin-left: 1.5rem;
 }
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.cardContainer > div {
+  margin: 24px !important;
+}
