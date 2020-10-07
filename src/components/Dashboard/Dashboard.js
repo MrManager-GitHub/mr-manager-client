@@ -35,7 +35,7 @@ class Dashboard extends Component {
           <Grid item container xs={3} className={styles.po}>
             <Grid item xs={8} className={styles.info}>
               <Typography variant="h4" color="inherit">01</Typography>
-              <Typography variant="body1" color="inherit">Pending Orders</Typography>
+              <Typography variant="body1" color="inherit">Purchase Orders</Typography>
             </Grid>
             <Grid item xs={4}>
               <div className={styles.siteImg}><img src={Block} width="100%" height="100%" alt="" /></div>

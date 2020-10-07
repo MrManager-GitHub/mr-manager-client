@@ -1,10 +1,18 @@
-.supplierTableContainer {
-    background-color: #fff;
-    margin-top: 2rem !important;
-    /* border-radius: 10px; */
+.GSrcontainer {
+    width: 100%;
+    height: 100%;
 }
 
-.supplierTableHead {
+.GSCardContainer {
+    background-color: #fff;
+    margin-top: 2rem !important;
+}
+
+.GSTableContainer {
+    width: 100%;
+}
+
+.GSTableHead {
     background-color: #3b495a;
 }
 
@@ -16,8 +24,6 @@
     color: #3b495a;
 }
 
-.editIcon,
-.deleteIcon {
-    margin-left: 0.75rem;
-    cursor: pointer;
+.formControl {
+    width: 100%;
 }
