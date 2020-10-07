@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Typography } from '@material-ui/core'
-// import Navbar from './../../elements/Navbar/Navbar'
-// import Sidebar from './../../elements/Sidebar/Sidebar'
 import styles from './Dashboard.module.css'
-// import Project from '../../containers/Project/Project'
 import Site from './../../elements/Images/site2.png'
 import Worker from './../../elements/Images/worker.png'
 import Block from './../../elements/Images/block.png'
@@ -31,7 +28,6 @@ class Dashboard extends Component {
               <Typography variant="subtitle2" color="inherit" align="center"><i class="fas fa-plus"></i> Create a new project</Typography>
             </Grid>
           </Grid>
-          {/* <Grid item xs={1} /> */}
           <Grid item container xs={3} className={styles.po}>
             <Grid item xs={8} className={styles.info}>
               <Typography variant="h4" color="inherit">01</Typography>

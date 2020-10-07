@@ -6,12 +6,14 @@ import AddIcon from '@material-ui/icons/Add';
 import styles from './Project.module.css'
 import ProjectCard from '../../elements/ProjectCard/ProjectCard'
 import CreateProjectCard from '../../elements/CreateProjectCard/CreateProjectCard'
+import DonutSpinner from '../../elements/DonutSpinner/DonutSpinner';
 
 class Project extends Component {
   state = {
     isExpand: false,
     numberOfProject: '1',
-    projects: []
+    projects: [],
+    isLoading: true
   }
 
   toggleFormHandler = () => {
@@ -27,7 +29,13 @@ class Project extends Component {
     }).then(res => {
       console.log(res.data);
       this.setState({
-        projects: res.data.Items
+        projects: res.data.Items,
+        isLoading: false
+      });
+    }).catch(err => {
+      console.log(err);
+      this.setState({
+        isLoading: false
       });
     });
   }
@@ -38,12 +46,21 @@ class Project extends Component {
     }).then(res => {
       console.log(res.data);
       this.setState({
-        projects: res.data.Items
+        projects: res.data.Items,
+        isLoading: false
+      });
+    }).catch(err => {
+      console.log(err);
+      this.setState({
+        isLoading: false
       });
     });
   }
 
   render() {
+    if (this.state.isLoading) {
+      return <DonutSpinner style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+    }
     return (
       <Grid container direction="row" className={styles.projectcontainer}>
         <Grid item xs={12} align="right" className={styles.addprojectcontainer}>
