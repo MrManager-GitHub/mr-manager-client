@@ -11,23 +11,6 @@ import MyButton from './../../elements/Button/Button'
 // import img from './../../elements/Images/site.png'
 
 class Register extends Component {
-<<<<<<< HEAD
-    render() {
-        return (
-            <div>
-                <Grid container justify="center" alignItems="center" alignItems="center" className={styles.maincontainer}>
-                    <Grid container xs={8} justify="center" className={styles.cardcontainer}>
-                        <Grid item xs={11} container direction="row" spacing={2} className={styles.formcontainer}>
-                            <Grid item xs={12} className={styles.inputcontainer}><Typography variant="h4" align="center" color="primary">Signup</Typography></Grid>
-                            <Grid item xs={5}>
-                                <MyInputField type="text" label="First name" name="fname"/>
-                            </Grid>
-                            <Grid item xs={2} />
-                            <Grid item xs={5}>
-                                <MyInputField type="text" label="Last name" name="lname"/>
-                            </Grid>
-                            {/* <Grid item xs={2} /> */}
-=======
   state = {
     token: '',
     isAuthenticated: this.props.isAuthenticated,
@@ -99,7 +82,7 @@ class Register extends Component {
       <div>
         <Grid container justify="center" alignItems="center" alignItems="center" className={styles.maincontainer}>
           <Grid container xs={8} justify="center" className={styles.cardcontainer}>
-            <Grid item xs={10} container direction="row" spacing={2} className={styles.formcontainer}>
+            <Grid item xs={11} container direction="row" spacing={2} className={styles.formcontainer}>
               <Grid item xs={12} className={styles.inputcontainer}><Typography variant="h4" align="center" color="primary">Signup</Typography></Grid>
               <Grid item xs={5}>
                 <MyInputField change={this.inputChangeHandler} type="text" label="First name" name="firstName" />
@@ -109,7 +92,6 @@ class Register extends Component {
                 <MyInputField change={this.inputChangeHandler} type="text" label="Last name" name="lastName" />
               </Grid>
               {/* <Grid item xs={2} /> */}
->>>>>>> bd116c9aca2ae772fc2f311b2fcdeab0d4eef733
 
               <Grid item xs={5}>
                 {/* <PhoneNumberInput /> */}
