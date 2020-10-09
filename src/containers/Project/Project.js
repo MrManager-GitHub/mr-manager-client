@@ -79,9 +79,9 @@ class Project extends Component {
                 null
           }
         </Grid>
-        {this.state.projects.map((project, index) => (
+        {this.state.projects.map(project => (
           <ProjectCard
-            key={index}
+            key={project.project_id}
             projectName={project.project_name}
             projectAddress={project.address}
             projectArea={project.area}

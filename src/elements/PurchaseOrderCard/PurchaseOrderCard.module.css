@@ -1,6 +1,10 @@
 .purchaseOrderCard {
-    background-color: #fff;
+    /* background-color: #fff; */
     margin-top: 2rem !important;
+}
+
+.POTableContainer {
+  border-radius: 10px;
 }
 
 .POTableHead {

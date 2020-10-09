@@ -37,12 +37,12 @@ function SupplierTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="center"><Typography className={styles.data} variant="body1">{row.name}</Typography></TableCell>
-              <TableCell align="center"><Typography className={styles.data} variant="body1">{row.email}</Typography></TableCell>
-              <TableCell align="center"><Typography className={styles.data} variant="body1">{row.contact}</Typography></TableCell>
-              <TableCell align="center"><Typography className={styles.data} variant="body1">{row.product}</Typography></TableCell>
+          {props.suppliers.map(supplier => (
+            <TableRow key={supplier.supplier_id}>
+              <TableCell align="center"><Typography className={styles.data} variant="body1">{supplier.supplier_name}</Typography></TableCell>
+              <TableCell align="center"><Typography className={styles.data} variant="body1">{supplier.supplier_email}</Typography></TableCell>
+              <TableCell align="center"><Typography className={styles.data} variant="body1">{supplier.phone_number}</Typography></TableCell>
+              <TableCell align="center"><Typography className={styles.data} variant="body1">{supplier.product}</Typography></TableCell>
               <TableCell align="center"><Typography className={styles.data} variant="body1"><EditIcon className={styles.editIcon} /><DeleteIcon className={styles.deleteIcon} /></Typography></TableCell>
             </TableRow>
           ))}

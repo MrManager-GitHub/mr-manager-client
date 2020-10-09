@@ -1,7 +1,7 @@
 .supplierTableContainer {
     background-color: #fff;
     margin-top: 2rem !important;
-    /* border-radius: 10px; */
+    border-radius: 10px;
 }
 
 .supplierTableHead {

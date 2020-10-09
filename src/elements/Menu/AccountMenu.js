@@ -53,9 +53,7 @@ const AccountMenu = props => {
 
   return (
     <div>
-      {/* <button aria-controls="customized-menu" aria-haspopup="true" variant="contained" color="primary" onClick={handleClick}> */}
       <Avatar aria-controls="customized-menu" aria-haspopup="true" onClick={handleClick} variant="rounded">{localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName')[0] : 'C'}</Avatar>
-      {/* </button> */}
       <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <StyledMenuItem>
           <ListItemIcon>
