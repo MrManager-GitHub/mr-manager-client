@@ -40,7 +40,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-export default function AccountMenu() {
+const AccountMenu = props => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -54,7 +54,7 @@ export default function AccountMenu() {
   return (
     <div>
       {/* <button aria-controls="customized-menu" aria-haspopup="true" variant="contained" color="primary" onClick={handleClick}> */}
-      <Avatar aria-controls="customized-menu" aria-haspopup="true" onClick={handleClick} variant="rounded">N</Avatar>
+      <Avatar aria-controls="customized-menu" aria-haspopup="true" onClick={handleClick} variant="rounded">{localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName')[0] : 'C'}</Avatar>
       {/* </button> */}
       <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <StyledMenuItem>
@@ -69,7 +69,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           <ListItemText primary="Your Plan" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => { localStorage.clear(); window.location.reload() }}>
           <ListItemIcon>
             <ExitToAppIcon fontSize="small" />
           </ListItemIcon>
@@ -79,3 +79,5 @@ export default function AccountMenu() {
     </div>
   );
 }
+
+export default AccountMenu;

@@ -44,7 +44,6 @@ class Project extends Component {
     axios.post('https://ervgglfmyi.execute-api.us-east-1.amazonaws.com/dev/projects', {
       token: localStorage.getItem('token')
     }).then(res => {
-      console.log(res.data);
       this.setState({
         projects: res.data.Items,
         isLoading: false
