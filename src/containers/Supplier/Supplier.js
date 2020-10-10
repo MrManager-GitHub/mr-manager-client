@@ -50,6 +50,9 @@ class Supplier extends Component {
         isSubmittingSupplier: false
       });
     });
+    this.setState(prevState => ({
+      isExpand: !prevState.isExpand,
+    }));
   }
 
   componentDidMount() {
@@ -84,7 +87,7 @@ class Supplier extends Component {
               </div>
 
               :
-              this.state.numberOfSupplier == '0' ?
+              this.state.suppliers.length == 0 ?
                 <div className={styles.arrow}>
                 </div>
                 :

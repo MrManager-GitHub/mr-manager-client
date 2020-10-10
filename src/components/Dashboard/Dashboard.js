@@ -66,7 +66,7 @@ class Dashboard extends Component {
               <Typography variant="subtitle2" color="inherit" align="center"><i class="fas fa-plus"></i> Create a new project</Typography>
             </Grid>
           </Grid>
-          <Grid item container xs={3} className={styles.po}>
+          <Grid item container xs={3} className={styles.po} onClick={() => this.props.history.push('/purchaseOrder')}>
             <Grid item xs={8} className={styles.info}>
               <Typography variant="h4" color="inherit">02</Typography>
               <Typography variant="body1" color="inherit">Purchase Orders</Typography>

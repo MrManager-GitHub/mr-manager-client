@@ -23,6 +23,9 @@ class Project extends Component {
   }
 
   projectSubmitHandler = () => {
+    this.setState(prevState => ({
+      isExpand: !prevState.isExpand,
+    }));
     console.log('project submitted');
     axios.post('https://ervgglfmyi.execute-api.us-east-1.amazonaws.com/dev/projects', {
       token: localStorage.getItem('token')
@@ -72,7 +75,7 @@ class Project extends Component {
                 <CreateProjectCard submit={this.projectSubmitHandler} />
               </div>
               :
-              this.state.numberOfProject == '0' ?
+              this.state.projects.length == 0 ?
                 <div className={styles.arrow}>
                 </div>
                 :

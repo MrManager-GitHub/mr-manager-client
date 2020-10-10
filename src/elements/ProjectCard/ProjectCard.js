@@ -25,10 +25,10 @@ function ProjectCard(props) {
       <Grid item xs={1} align="center">
         <Typography variant="body1" color="primary"><i class="fas fa-rupee-sign"> : {projectValuation} Cr.</i></Typography>
       </Grid>
-      <Grid item xs={3} align="center">
+      <Grid item xs={5} align="center">
         <Typography variant="body1" color="primary"><i class="fas fa-calendar-alt"> : {projectStartingDate} to {projectEndingDate}</i></Typography>
       </Grid>
-      <Grid item xs={2} />
+      <Grid item xs={0} />
 
       <div className={styles.cardContainer}>
         {props.house !== undefined ? <Grid item xs={1}>
