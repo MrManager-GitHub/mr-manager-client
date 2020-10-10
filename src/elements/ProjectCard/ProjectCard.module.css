@@ -12,6 +12,12 @@
     color: #fff;
 }
 
+.projectTitleEditMode {
+    width: 80%;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
 .editIcon,
 .deleteIcon {
     cursor: pointer;
@@ -19,11 +25,31 @@
 }
 
 .cardContainer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
-.cardContainer > div {
-  margin: 24px !important;
+.cardContainer>div {
+    margin: 24px !important;
+}
+
+.division1 {
+    /* background-color: yellow; */
+    padding: 1.5rem;
+    padding-bottom: 0;
+    border-right: 2px dashed #1B2735;
+}
+
+.division2 {
+    /* background-color: blue; */
+    padding: 1.5rem;
+    padding-bottom: 0;
+    border-right: 2px dashed #1B2735;
+}
+
+.division3 {
+    /* background-color: blue; */
+    padding: 1.5rem;
+    padding-bottom: 0;
 }

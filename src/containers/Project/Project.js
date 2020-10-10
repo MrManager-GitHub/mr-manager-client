@@ -13,7 +13,8 @@ class Project extends Component {
     isExpand: false,
     numberOfProject: '1',
     projects: [],
-    isLoading: true
+    isLoading: true,
+    isEditing: false,
   }
 
   toggleFormHandler = () => {
@@ -59,6 +60,12 @@ class Project extends Component {
     });
   }
 
+  editModeHandler = () => {
+    this.setState(prevState => ({
+      isEditing: !prevState.isEditing,
+    }));
+  }
+
   render() {
     if (this.state.isLoading) {
       return <DonutSpinner style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
@@ -72,7 +79,7 @@ class Project extends Component {
           {
             this.state.isExpand ?
               <div className={styles.formcontainer}>
-                <CreateProjectCard submit={this.projectSubmitHandler} />
+                <CreateProjectCard isEditing={this.isEditing} submit={this.projectSubmitHandler} />
               </div>
               :
               this.state.projects.length == 0 ?
@@ -83,6 +90,7 @@ class Project extends Component {
           }
         </Grid>
         {this.state.projects.map(project => (
+          
           <ProjectCard
             key={project.project_id}
             projectName={project.project_name}
@@ -96,6 +104,8 @@ class Project extends Component {
             plot={project.plot}
             flat={project.flat}
             workers={project.workers}
+            editMode={this.editModeHandler}
+            isEditing={this.state.isEditing}
           />
         ))}
       </Grid>
